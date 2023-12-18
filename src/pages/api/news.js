@@ -28,6 +28,12 @@ async function run(req, res) {
             })
         }
 
+        if (req.method === "POST") {
+            const news = req.body;
+            const result = await newsCollection.insertOne(news);
+            res.json(result)
+        }
+
     } finally {
         // Ensures that the client will close when you finish/error
         // await client.close();
