@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-// import styles from "@/styles/Create.module.css";
+import styles from "@/styles/Create.module.css";
 
 const CreateNews = () => {
     const { register, handleSubmit } = useForm();
@@ -22,6 +22,7 @@ const CreateNews = () => {
     return (
         <div>
             <form
+                className={styles.form}
                 onSubmit={handleSubmit(onSubmit)}
                 name="form_item_path"
                 layout="vertical"
